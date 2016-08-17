@@ -10,6 +10,6 @@ var bookSchema = mongoose.Schema({
   comments: String
 });
 
-var Book = mongoose.model('Book', bookSchema);
+var books = mongoose.model('books', bookSchema);
 
-module.exports = Book;
+module.exports = books;

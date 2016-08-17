@@ -3,13 +3,16 @@
   <head>
     <meta charset="utf-8">
     <script src="vendors/angular.min.js" charset="utf-8"></script>
+    <script src="vendors/angular-route.min.js" charset="utf-8"></script>
     <script src="scripts/script.js" charset="utf-8"></script>
     <title>Nicole's Project</title>
   </head>
-  <body>
+  <body ng-controller="mainPage">
+    <header>
+      <h1>BookWorms Only!</h1>
+      <a href="/">Home</a>
+    </header>
 
-    <div ng-controller="mainPage">
-      <h1>BookWorm's Only!!!</h1>
       Title: <input type="text" name="title" ng-model="title" value="" placeholder="Title"><br>
       Volume(opt): <input type="text" name="volume" ng-model="volume" value="" placeholder="Volume #"><br>
       Author: <input type="text" name="author" ng-model="author" value="" placeholder="Auther"><br>
@@ -17,6 +20,7 @@
       Stars: <input type="text" name="stars" ng-model="stars" value="" placeholder="Stars"><br>
       Comments: <input type="text" name="name" ng-model="comments" value="" placeholder="Comments..."><br>
       <button type="button" name="button" ng-click="addBook()">Submit</button>
-    </div>
+
+
   </body>
 </html>

@@ -1,3 +1,3 @@
-myApp.factory('bookFactory', ['$http', function ($http) {
-  
+myApp.factory('BookFactory', ['$http', function ($http) {
+
 }]);//end of factory
