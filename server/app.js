@@ -24,9 +24,9 @@ var bookSchema = mongoose.Schema({
 var books = mongoose.model('books', bookSchema);
 
 
-app.get('/', function (req, res) {
-  res.sendFile(path.resolve('views/index.html'));
-});//end of base URL
+// app.get('/', function (req, res) {
+//   res.sendFile(path.resolve('views/index.html'));
+// });//end of base URL
 
 app.post('/bookPost', function (req, res) {
   console.log('inside post', req.body);
@@ -50,4 +50,9 @@ app.post('/bookPost', function (req, res) {
 });//End of book post function
 
 //static folder
-app.use(express.static('public'));
+// app.use(express.static('public'));
+
+app.get("/*", function(req,res){
+  var file = req.params[0] || "/views/index.html";
+  res.sendFile(path.join(__dirname, "/public/", file));
+});
