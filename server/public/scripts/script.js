@@ -10,6 +10,10 @@ myApp.config(['$routeProvider', function ($routeProvider) {
         templateUrl: "/views/routes/about.html",
         controller: "aboutController"
       }).
+      when('/sortBook', {
+        templateUrl: "/views/routes/sortBook.html",
+        controller: "sortBookController"
+      }).
       otherwise({
         redirectTo: "addBook"
       });
@@ -45,3 +49,14 @@ myApp.controller('addingBook', ['$scope', '$http', function ($scope, $http) {
 myApp.controller('aboutController', ['$scope', '$http', function ($scope, $http) {
   console.log('Yep...');
 }]);//end of about Controller
+
+myApp.controller('sortBookController', ['$scope', '$http', function ($scope, $http) {
+  $scope.getBooks = function () {
+    $http({
+      method: 'GET',
+      url: '/getBooks',
+    }). then(function (response) {
+      $scope.allTheBooks = response.data;
+    });//End of http call
+  };//end of get books function
+}]);//end of sort book controller

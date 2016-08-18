@@ -1,0 +1,12 @@
+<h1>Sorting Books</h1>
+<button ng-click="getBooks()" name="getBooks">Get Book List!</button>
+<ul ng-repeat="books in allTheBooks">
+  <li><strong>Title: </strong>{{books.title}}</li>
+    <ul>
+      <li><strong>Volume: </strong>{{books.volume}}</li>
+      <li><strong>Author: </strong>{{books.author}}</li>
+      <li><strong>Genre: </strong>{{books.genre}}</li>
+      <li><strong>Stars: </strong>{{books.stars}}</li>
+      <li><strong>Comments: </strong>{{books.comments}}</li>
+    </ul>
+</ul>

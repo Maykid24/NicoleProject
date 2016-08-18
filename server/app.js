@@ -49,6 +49,13 @@ app.post('/bookPost', function (req, res) {
   });
 });//End of book post function
 
+app.get('/getBooks', function (req, res) {
+  books.find()
+  .then(function(data) {
+    res.send(data);
+  });//end of then function
+});//end of get books function
+
 //static folder
 // app.use(express.static('public'));
 
