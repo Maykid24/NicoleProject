@@ -59,4 +59,5 @@ myApp.controller('sortBookController', ['$scope', '$http', function ($scope, $ht
       $scope.allTheBooks = response.data;
     });//End of http call
   };//end of get books function
+
 }]);//end of sort book controller
