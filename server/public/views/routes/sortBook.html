@@ -1,9 +1,11 @@
 <h1>Sorting Books</h1>
 <div ng-init="getBooks()"></div>
 <p><input type="text" ng-model="test" placeholder="Search..."></p>
-<ul ng-repeat="books in allTheBooks | filter:test">
+<p><select ng-model="category" ng-options="x for x in categoryNames">Category</select></p>
+<ul ng-repeat="books in allTheBooks | filter:test | filter:category">
   <li><strong>Title: </strong>{{books.title}}</li>
     <ul>
+      <li><strong>Category: </strong>{{books.category}}</li>
       <li><strong>Volume: </strong>{{books.volume}}</li>
       <li><strong>Author: </strong>{{books.author}}</li>
       <li><strong>Genre: </strong>{{books.genre}}</li>

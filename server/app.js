@@ -14,6 +14,7 @@ app.listen( process.env.PORT || 8080, function( req, res ){
 
 var bookSchema = mongoose.Schema({
   title: {type: String, required: true},
+  category: String,
   volume: String,
   author: String,
   genre: String,
@@ -32,6 +33,7 @@ app.post('/bookPost', function (req, res) {
   console.log('inside post', req.body);
   var bookToAdd={
     title: req.body.title,
+    category: req.body.category,
     volume: req.body.volume,
     author: req.body.author,
     genre: req.body.genre,

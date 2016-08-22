@@ -25,6 +25,7 @@ myApp.controller('addingBook', ['$scope', '$http', function ($scope, $http) {
   $scope.addBook = function () {
     var newBook = {
       title: $scope.title,
+      category: $scope.category,
       volume: $scope.volume,
       author: $scope.author,
       genre: $scope.genre,
@@ -38,12 +39,15 @@ myApp.controller('addingBook', ['$scope', '$http', function ($scope, $http) {
       data: newBook
     });//end of http call
     $scope.title = '';
+    $scope.category = '';
     $scope.volume = '';
     $scope.author = '';
     $scope.genre = '';
     $scope.stars = '';
     $scope.comments = '';
   };//End of add Book
+
+  $scope.categoryNames = ['Need to Buy', 'Need to Read', 'Already Have'];
 }]);//End of controller
 
 myApp.controller('aboutController', ['$scope', '$http', function ($scope, $http) {
@@ -60,4 +64,5 @@ myApp.controller('sortBookController', ['$scope', '$http', function ($scope, $ht
     });//End of http call
   };//end of get books function
 
+  $scope.categoryNames = ['', 'Need to Buy', 'Need to Read', 'Already Have'];
 }]);//end of sort book controller
