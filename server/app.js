@@ -15,6 +15,7 @@ app.listen( process.env.PORT || 8080, function( req, res ){
 var bookSchema = mongoose.Schema({
   title: {type: String, required: true},
   category: String,
+  eBook: Boolean,
   volume: String,
   author: String,
   genre: String,
