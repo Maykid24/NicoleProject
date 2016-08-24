@@ -35,6 +35,7 @@ app.post('/bookPost', function (req, res) {
   var bookToAdd={
     title: req.body.title,
     category: req.body.category,
+    eBook: req.body.eBook,
     volume: req.body.volume,
     author: req.body.author,
     genre: req.body.genre,

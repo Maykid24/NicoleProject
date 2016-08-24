@@ -41,7 +41,6 @@ myApp.controller('addingBook', ['$scope', '$http', function ($scope, $http) {
     });//end of http call
     $scope.title = '';
     $scope.category = '';
-    $scope.eBook = '';
     $scope.volume = '';
     $scope.author = '';
     $scope.genre = '';
@@ -68,5 +67,11 @@ myApp.controller('sortBookController', ['$scope', '$http', function ($scope, $ht
 
   $scope.categoryNames = ['', 'Need to Buy', 'Need to Read', 'Already Have'];
 
-  
+  $scope.geteBooks = function () {
+    if($scope.allTheBooks.eBook === true){
+      text = 'Yes';
+    }else {
+      text = 'No';
+    }
+  };//end of ebook function
 }]);//end of sort book controller
