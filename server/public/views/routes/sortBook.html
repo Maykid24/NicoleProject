@@ -2,7 +2,8 @@
 <div ng-init="getBooks()"></div>
 <p><input type="text" ng-model="test" placeholder="Search..."></p>
 <p><select ng-model="category" ng-options="x for x in categoryNames">Category</select></p>
-<ul ng-repeat="books in allTheBooks | filter:test | filter:category">
+eBook: <input type="checkbox" ng-model="eBook">
+<ul ng-repeat="books in allTheBooks | filter:test | filter:category | filter:eBook">
   <li><strong>Title: </strong>{{books.title}}</li>
     <ul>
       <li><strong>Category: </strong>{{books.category}}</li>
