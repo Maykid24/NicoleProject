@@ -3,15 +3,16 @@
 <p><input type="text" ng-model="test" placeholder="Search..."></p>
 <p><select ng-model="category" ng-options="x for x in categoryNames">Category</select></p>
 eBook: <input type="checkbox" ng-model="eBook">
-<ul ng-repeat="books in allTheBooks | filter:test | filter:category | filter:eBook">
-  <li><strong>Title: </strong>{{books.title}}</li>
+<ul ng-repeat="book in allTheBooks | filter:test | filter:category | filter: eBook">
+  <li><strong>Title: </strong>{{book.title}}</li>
     <ul>
-      <li><strong>Category: </strong>{{books.category}}</li>
-      <li><strong>eBook: </strong>{{books.eBook?'yes':'no'}}</li>
-      <li><strong>Volume: </strong>{{books.volume}}</li>
-      <li><strong>Author: </strong>{{books.author}}</li>
-      <li><strong>Genre: </strong>{{books.genre}}</li>
-      <li><strong>Stars: </strong>{{books.stars}}</li>
-      <li><strong>Comments: </strong>{{books.comments}}</li>
+      <li><strong>Category: </strong>{{book.category}}</li>
+      <li><strong>eBook: </strong>{{book.eBook?'Yes':'No'}}</li>
+      <li><strong>Volume: </strong>{{book.volume}}</li>
+      <li><strong>Author: </strong>{{book.author}}</li>
+      <li><strong>Genre: </strong>{{book.genre}}</li>
+      <li><strong>Stars: </strong>{{book.stars}}</li>
+      <li><strong>Comments: </strong>{{book.comments}}</li>
+      <button type="button" ng-click="deleteBook($index)">Delete</button>
     </ul>
 </ul>

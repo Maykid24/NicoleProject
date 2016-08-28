@@ -60,6 +60,18 @@ app.get('/getBooks', function (req, res) {
   });//end of then function
 });//end of get books function
 
+app.delete('/deleteBook', function (req, res) {
+  console.log('before delete');
+  books.findOneByIdAndRemove({'_id': req.body.id}, function (err, book) {
+    console.log('deletedBook');
+    if(err){
+      res.sendStatus(500);
+    } else {
+      res.sendStatus(200);
+    }
+  });
+});//end of delete book function
+
 //static folder
 // app.use(express.static('public'));
 

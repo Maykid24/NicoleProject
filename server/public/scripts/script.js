@@ -22,16 +22,17 @@ myApp.config(['$routeProvider', function ($routeProvider) {
 
 myApp.controller('addingBook', ['$scope', '$http', function ($scope, $http) {
   console.log("Making it to controller");
+  $scope.book = {};
   $scope.addBook = function () {
     var newBook = {
-      title: $scope.title,
-      category: $scope.category,
-      eBook: $scope.eBook,
-      volume: $scope.volume,
-      author: $scope.author,
-      genre: $scope.genre,
-      stars: $scope.stars,
-      comments: $scope.comments
+      title: $scope.book.title,
+      category: $scope.book.category,
+      eBook: $scope.book.eBook,
+      volume: $scope.book.volume,
+      author: $scope.book.author,
+      genre: $scope.book.genre,
+      stars: $scope.book.stars,
+      comments: $scope.book.comments
     };//end of array
     console.log('new book goes here please and thank you....', newBook);
     $http({
@@ -39,13 +40,13 @@ myApp.controller('addingBook', ['$scope', '$http', function ($scope, $http) {
       url: '/bookPost',
       data: newBook
     });//end of http call
-    $scope.title = '';
-    $scope.category = '';
-    $scope.volume = '';
-    $scope.author = '';
-    $scope.genre = '';
-    $scope.stars = '';
-    $scope.comments = '';
+    $scope.book.title = '';
+    $scope.book.category = '';
+    $scope.book.volume = '';
+    $scope.book.author = '';
+    $scope.book.genre = '';
+    $scope.book.stars = '';
+    $scope.book.comments = '';
   };//End of add Book
 
   $scope.categoryNames = ['Need to Buy', 'Need to Read', 'Already Have'];
@@ -67,11 +68,18 @@ myApp.controller('sortBookController', ['$scope', '$http', function ($scope, $ht
 
   $scope.categoryNames = ['', 'Need to Buy', 'Need to Read', 'Already Have'];
 
-  $scope.geteBooks = function () {
-    if($scope.allTheBooks.eBook === true){
-      text = 'Yes';
-    }else {
-      text = 'No';
-    }
-  };//end of ebook function
+  $scope.eBookFilter = function () {
+    
+  };//end of ebook filter
+
+  $scope.deleteBook = function (book) {
+    $http({
+      method: 'DELETE',
+      url: '/deleteBook',
+    }). then(function (book) {
+      var index = $scope.allTheBooks.indexOf(book);
+      $scope.allTheBooks.splice(index,1);
+      console.log('deleted');
+    });//end of http call
+  };//end of delete book function
 }]);//end of sort book controller
