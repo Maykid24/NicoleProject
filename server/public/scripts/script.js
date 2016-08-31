@@ -69,17 +69,24 @@ myApp.controller('sortBookController', ['$scope', '$http', function ($scope, $ht
   $scope.categoryNames = ['', 'Need to Buy', 'Need to Read', 'Already Have'];
 
   $scope.eBookFilter = function () {
-    
+
   };//end of ebook filter
 
-  $scope.deleteBook = function (book) {
-    $http({
-      method: 'DELETE',
-      url: '/deleteBook',
-    }). then(function (book) {
-      var index = $scope.allTheBooks.indexOf(book);
-      $scope.allTheBooks.splice(index,1);
-      console.log('deleted');
-    });//end of http call
+  $scope.deleteBook = function (id) {
+    console.log('deleted button pressed!', id);
+    $http.delete('/deleteBook/' + id).success(function(response){
+      getBooks();
+    });
+
+    // $http({
+    //   method: 'DELETE',
+    //   url: '/deleteBook',
+    // }). then(function (book) {
+    //   console.log('deleted', book);
+    // },{
+    //   function(err){
+    //     console.log('an error occurred', error.data);
+    //   }
+    // });//end of http call
   };//end of delete book function
 }]);//end of sort book controller

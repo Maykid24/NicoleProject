@@ -13,6 +13,6 @@ eBook: <input type="checkbox" ng-model="eBook">
       <li><strong>Genre: </strong>{{book.genre}}</li>
       <li><strong>Stars: </strong>{{book.stars}}</li>
       <li><strong>Comments: </strong>{{book.comments}}</li>
-      <button type="button" ng-click="deleteBook($index)">Delete</button>
+      <li><button type="button" ng-click="deleteBook(book._id)">Delete</button></li>
     </ul>
 </ul>
