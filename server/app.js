@@ -64,7 +64,7 @@ app.delete('/deleteBook/:id', function (req, res) {
   console.log('before delete');
   var id = req.params.id;
   console.log('from app.js',id);
-  
+  bookSchema.books.remove(req.params.id);
   });
 // });//end of delete book function
 
