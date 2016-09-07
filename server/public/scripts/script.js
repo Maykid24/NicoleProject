@@ -75,7 +75,7 @@ myApp.controller('sortBookController', ['$scope', '$http', function ($scope, $ht
   $scope.deleteBook = function (id) {
     console.log('deleted button pressed!', id);
     $http.delete('/deleteBook/' + id).success(function(response){
-      getBooks();
+      $scope.getBooks();
     });
 
     // $http({

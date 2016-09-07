@@ -62,9 +62,19 @@ app.get('/getBooks', function (req, res) {
 
 app.delete('/deleteBook/:id', function (req, res) {
   console.log('before delete');
-  var id = req.params.id;
-  console.log('from app.js',id);
-  bookSchema.books.remove(req.params.id);
+  var bookId = req.params.id;
+  console.log('from app.js',bookId);
+
+  books.findOne({_id: bookId}, function(err, book) {
+    if(err){
+      console.log(err);
+      res.sendStatus(500);
+    } else {
+      books.remove({_id: bookId}, function(err) {});
+      console.log('HAS BEEN DELETED SON!');
+      res.sendStatus(200);
+    } // end else
+  }); // end Hero.findOne
   });
 // });//end of delete book function
 
