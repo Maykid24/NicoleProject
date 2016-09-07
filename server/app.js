@@ -74,19 +74,8 @@ app.delete('/deleteBook/:id', function (req, res) {
       console.log('HAS BEEN DELETED SON!');
       res.sendStatus(200);
     } // end else
-  }); // end Hero.findOne
+  }); // end books.findOne
   });
-// });//end of delete book function
-
-  // books.findOneByIdAndRemove({'_id': req.body.id}, function (err, book) {
-  //   console.log('deletedBook');
-  //   if(err){
-  //     res.sendStatus(500);
-  //   } else {
-  //     res.sendStatus(200);
-  //   }
-  // });
-// });//end of delete book function
 
 //static folder
 // app.use(express.static('public'));
