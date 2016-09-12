@@ -79,4 +79,11 @@ myApp.controller('sortBookController', ['$scope', '$http', function ($scope, $ht
     });
 
   };//end of delete book function
+
+  $scope.updateBook = function () {
+    console.log('Pressed the update button');
+    $http.update('/updateBook/'+ id).success(function(response){
+      $scope.getBooks();
+    });//end of http call
+  };//End of updateBook function
 }]);//end of sort book controller
