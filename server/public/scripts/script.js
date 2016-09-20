@@ -1,4 +1,4 @@
-myApp = angular.module('myApp', ['ngRoute']);
+myApp = angular.module('myApp', ['ngRoute', 'xeditable']);
 
 myApp.config(['$routeProvider', function ($routeProvider) {
   $routeProvider.
