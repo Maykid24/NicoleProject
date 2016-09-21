@@ -3,16 +3,28 @@
 <p><input type="text" ng-model="test" placeholder="Search..."></p>
 <p><select ng-model="category" ng-options="x for x in categoryNames">Category</select></p>
 eBook: <input type="checkbox" ng-model="eBook">
+
 <ul ng-repeat="book in allTheBooks | filter:test | filter:category | filter: eBook">
-  <li><strong>Title: </strong>{{book.title}}</li>
+  <li><strong>Title: </strong><span editable-text="book.title" e-name="name" e-form="editableForm" e-required>{{book.title}}</span></li>
     <ul>
-      <li><strong>Category: </strong>{{book.category}}</li>
-      <li><strong>eBook: </strong>{{book.eBook?'Yes':'No'}}</li>
-      <li><strong>Volume: </strong>{{book.volume}}</li>
-      <li><strong>Author: </strong>{{book.author}}</li>
-      <li><strong>Genre: </strong>{{book.genre}}</li>
-      <li><strong>Stars: </strong>{{book.stars}}</li>
-      <li><strong>Comments: </strong>{{book.comments}}</li>
-      <li><button type="button" ng-click="deleteBook(book._id)">Delete</button><button type="button" ng-click="updateBook()">Update</button></li>
+      <li><strong>Category: </strong><span editable-text="book.category" e-name="name" e-form="editableForm" e-required>{{book.category}}</span></li>
+      <li><strong>eBook: </strong><span editable-text="book.eBook" e-name="name" e-form="editableForm" e-required>{{book.eBook?'Yes':'No'}}</span></li>
+      <li><strong>Volume: </strong><span editable-text="book.volume" e-name="name" e-form="editableForm" e-required>{{book.volume}}</li>
+      <li><strong>Author: </strong><span editable-text="book.author" e-name="name" e-form="editableForm" e-required>{{book.author}}</li>
+      <li><strong>Genre: </strong><span editable-text="book.genre" e-name="name" e-form="editableForm" e-required>{{book.genre}}</li>
+      <li><strong>Stars: </strong><span editable-text="book.stars" e-name="name" e-form="editableForm" e-required>{{book.stars}}</li>
+      <li><strong>Comments: </strong><span editable-text="book.comments" e-name="name" e-form="editableForm" e-required>{{book.comments}}</li>
+      <li><button type="button" ng-click="deleteBook(book._id)">Delete</button></li>
+      <li>
+        <form editable-form name="editableForm" onaftersave="saveUser()">
+        <div>
+        <button type="button" class="btn btn-default" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">Edit</button>
+        <span ng-show="editableForm.$visible">
+          <button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting">Save</button>
+          <button type="button" class="btn btn-default" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">Cancel</button>
+        </span>
+        </div>
+        </form>
+      </li>
     </ul>
 </ul>
