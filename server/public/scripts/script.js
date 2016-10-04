@@ -80,10 +80,17 @@ myApp.controller('sortBookController', ['$scope', '$http', function ($scope, $ht
 
   };//end of delete book function
 
-  $scope.updateBook = function () {
-    console.log('Pressed the update button');
-    $http.update('/updateBook/'+ id).success(function(response){
-      $scope.getBooks();
-    });//end of http call
+  $scope.saveUser = function () {
+    console.log('Pressed the edit button');
+    var updatedBook = {
+      title: $scope.book.title,
+      category: $scope.book.category,
+      eBook: $scope.book.eBook,
+      volume: $scope.book.volume,
+      author: $scope.book.author,
+      genre: $scope.book.genre,
+      stars: $scope.book.stars,
+      comments: $scope.book.comments
+    };//end of updatedBook
   };//End of updateBook function
 }]);//end of sort book controller
