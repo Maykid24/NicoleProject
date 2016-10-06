@@ -82,15 +82,22 @@ myApp.controller('sortBookController', ['$scope', '$http', function ($scope, $ht
 
   $scope.saveUser = function () {
     console.log('Pressed the edit button');
-    var updatedBook = {
-      title: $scope.book.title,
-      category: $scope.book.category,
-      eBook: $scope.book.eBook,
-      volume: $scope.book.volume,
-      author: $scope.book.author,
-      genre: $scope.book.genre,
-      stars: $scope.book.stars,
-      comments: $scope.book.comments
-    };//end of updatedBook
+    console.log('allTheBooks', $scope.allTheBooks);
+    console.log('id', $scope._id);
+    // var updateBook = {
+    //   title: $scope.book.title,
+    //   category: $scope.book.category,
+    //   eBook: $scope.book.eBook,
+    //   volume: $scope.book.volume,
+    //   author: $scope.book.author,
+    //   genre: $scope.book.genre,
+    //   stars: $scope.book.stars,
+    //   comments: $scope.book.comments
+    // };//end of updatedBook
+    // $http({
+    //   method: 'POST',
+    //   url: '/bookUpdate',
+    //   data: updateBook
+    // });//end of http call
   };//End of updateBook function
 }]);//end of sort book controller
