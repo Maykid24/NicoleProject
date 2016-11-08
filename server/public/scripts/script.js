@@ -80,13 +80,11 @@ myApp.controller('sortBookController', ['$scope', '$http', function ($scope, $ht
 
   };//end of delete book function
 
-  $scope.tester = function( id ){
+  $scope.update = function( id ){
     console.log( 'editing book with id:', id );
-    var updateBook = {
-      
-    };//End of updateBook
+    console.log('figuring out shit... ' , id);
 
-  };
+  };//end of Update
 
   $scope.saveUser = function () {
     console.log('Pressed the edit button');

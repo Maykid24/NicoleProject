@@ -77,8 +77,8 @@ app.delete('/deleteBook/:id', function (req, res) {
   }); // end books.findOne
   });
 
-app.put('/bookUpdate', function (req, res) {
-  console.log('within update', req.body);
+app.put('/bookUpdate/:id', function (req, res) {
+  
 });//end of app.update function
 //static folder
 // app.use(express.static('public'));
