@@ -81,9 +81,13 @@ myApp.controller('sortBookController', ['$scope', '$http', function ($scope, $ht
   };//end of delete book function
 
   $scope.update = function( id ){
-    console.log( 'editing book with id:', id );
-    console.log('figuring out shit... ' , id);
+    console.log('figuring things out... ' , id);
+    $http({
+      method: 'PUT',
+      url: '/bookUpdate/' + id,
+    }).then(function successCallback(response) {
 
+    });//end of http call
   };//end of Update
 
   $scope.saveUser = function () {
