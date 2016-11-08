@@ -80,6 +80,7 @@ app.delete('/deleteBook/:id', function (req, res) {
 app.put('/bookUpdate/:id', function (req, res) {
   var updateBookId = req.params.id;
   console.log('from app.js ' , updateBookId);
+  console.log('title' , req.body.title);
   books.update({_id: updateBookId}, {$set: {title: req.body.title}} );
 });//end of app.update function
 //static folder
