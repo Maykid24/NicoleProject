@@ -86,7 +86,7 @@ app.put('/bookUpdate/:id', function (req, res) {
   console.log('title ', req.body.title);
   books.update({book_id: book_id}, book, function(err, book){
     if(!err){
-      res.json('okay!');
+      res.send('okay!');
     } else {
       res.write('fail');
     }

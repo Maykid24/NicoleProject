@@ -80,14 +80,14 @@ myApp.controller('sortBookController', ['$scope', '$http', function ($scope, $ht
 
   };//end of delete book function
 
-  $scope.update = function( id ){
-    console.log('figuring things out... ' , id);
+  $scope.update = function( book ){
+    console.log('figuring things out... ' , book);
     var dataSend = {
       book: $scope.allTheBooks
     };//end of dataSend
     $http({
       method: 'PUT',
-      url: '/bookUpdate/' + id,
+      url: '/bookUpdate/' + book,
       data: dataSend,
     }).then(function successCallback(response) {
       console.log('Success');
