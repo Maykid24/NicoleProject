@@ -80,10 +80,19 @@ myApp.controller('sortBookController', ['$scope', '$http', function ($scope, $ht
 
   };//end of delete book function
 
+  $scope.tester = function( id ){
+    console.log( 'editing book with id:', id );
+    var updateBook = {
+      
+    };//End of updateBook
+
+  };
+
   $scope.saveUser = function () {
     console.log('Pressed the edit button');
     console.log('allTheBooks', $scope.allTheBooks);
-    console.log('id', $scope._id);
+    // change the 0 below to the index of the editd book in the array
+    console.log('id maybe?', $scope.allTheBooks[0]._id);
     // var updateBook = {
     //   title: $scope.book.title,
     //   category: $scope.book.category,

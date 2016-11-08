@@ -18,7 +18,7 @@ eBook: <input type="checkbox" ng-model="eBook">
       <li>
         <form editable-form name="editableForm" onaftersave="saveUser()">
         <div>
-        <button type="button" class="btn btn-default" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">Edit</button>
+        <button type="button" class="btn btn-default" ng-click="editableForm.$show(); tester(book._id);" ng-show="!editableForm.$visible">Edit</button>
         <span ng-show="editableForm.$visible">
           <button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting">Save</button>
           <button type="button" class="btn btn-default" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">Cancel</button>
