@@ -82,11 +82,18 @@ myApp.controller('sortBookController', ['$scope', '$http', function ($scope, $ht
 
   $scope.update = function( id ){
     console.log('figuring things out... ' , id);
+    var dataSend = {
+      book: $scope.allTheBooks
+    };//end of dataSend
     $http({
       method: 'PUT',
       url: '/bookUpdate/' + id,
+      data: dataSend,
     }).then(function successCallback(response) {
-
+      console.log('Success');
+    }).catch(function onReject(errorResponse) {
+      console.log(errorResponse.status);
+      throw errorResponse;
     });//end of http call
   };//end of Update
 

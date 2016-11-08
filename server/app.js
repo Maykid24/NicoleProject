@@ -78,10 +78,19 @@ app.delete('/deleteBook/:id', function (req, res) {
   });
 
 app.put('/bookUpdate/:id', function (req, res) {
-  var updateBookId = req.params.id;
-  console.log('from app.js ' , updateBookId);
-  console.log('title' , req.body.title);
-  books.update({_id: updateBookId}, {$set: {title: req.body.title}} );
+  // var updateBookId = req.params.id;
+  var book = req.body;
+  console.log('book test' , book);
+  var book_id = req.params.id;
+  console.log('from app.js ' , req.params.id);
+  console.log('title ', req.body.title);
+  books.update({book_id: book_id}, book, function(err, book){
+    if(!err){
+      res.json('okay!');
+    } else {
+      res.write('fail');
+    }
+  } );
 });//end of app.update function
 //static folder
 // app.use(express.static('public'));
