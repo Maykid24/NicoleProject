@@ -87,7 +87,9 @@ app.put('/bookUpdate/:id', function (req, res) {
   var _id = req.body.book._id;
   books.findOneAndUpdate(_id, {title: req.body.book.title, category: req.body.book.category, eBook: req.body.book.eBook,
     volume: req.body.book.volume, author: req.body.book.author, genre: req.body.book.genre, stars: req.body.book.stars,
-    comments: req.body.book.comments});
+    comments: req.body.book.comments}, function (err) {
+
+    });
 });//end of app.update function
 //static folder
 // app.use(express.static('public'));

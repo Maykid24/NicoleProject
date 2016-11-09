@@ -16,7 +16,7 @@ eBook: <input type="checkbox" ng-model="eBook">
       <li><strong>Comments: </strong><span editable-text="book.comments" e-name="name" e-form="editableForm" e-required>{{book.comments}}</li>
       <li><button type="button" ng-click="deleteBook(book._id)">Delete</button></li>
       <li>
-        <form editable-form name="editableForm" onaftersave="saveUser()">
+        <form editable-form name="editableForm" onaftersave="update(book._id, book)">
         <div>
         <button type="button" class="btn btn-default" ng-click="editableForm.$show();" ng-show="!editableForm.$visible">Edit</button>
         <span ng-show="editableForm.$visible">
