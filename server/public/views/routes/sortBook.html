@@ -20,7 +20,7 @@ eBook: <input type="checkbox" ng-model="eBook">
         <div>
         <button type="button" class="btn btn-default" ng-click="editableForm.$show();" ng-show="!editableForm.$visible">Edit</button>
         <span ng-show="editableForm.$visible">
-          <button type="submit" class="btn btn-primary" ng-click="update(book);" ng-disabled="editableForm.$waiting">Save</button>
+          <button type="submit" class="btn btn-primary" ng-click="update(book._id, book);" ng-disabled="editableForm.$waiting">Save</button>
           <button type="button" class="btn btn-default" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">Cancel</button>
         </span>
         </div>

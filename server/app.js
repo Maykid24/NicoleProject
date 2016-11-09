@@ -81,16 +81,13 @@ app.put('/bookUpdate/:id', function (req, res) {
   // var updateBookId = req.params.id;
   var book = req.body;
   console.log('book test' , book);
-  var book_id = req.params.id;
-  console.log('from app.js ' , req.params.id);
-  console.log('title ', req.body.title);
-  books.update({book_id: book_id}, book, function(err, book){
-    if(!err){
-      res.send('okay!');
-    } else {
-      res.write('fail');
-    }
-  } );
+  console.log('test title', req.body.book.title);
+  console.log('test category' ,  req.body.book.category);
+  console.log('testing ID' , req.body.book._id);
+  var _id = req.body.book._id;
+  books.findOneAndUpdate(_id, {title: req.body.book.title, category: req.body.book.category, eBook: req.body.book.eBook,
+    volume: req.body.book.volume, author: req.body.book.author, genre: req.body.book.genre, stars: req.body.book.stars,
+    comments: req.body.book.comments});
 });//end of app.update function
 //static folder
 // app.use(express.static('public'));
