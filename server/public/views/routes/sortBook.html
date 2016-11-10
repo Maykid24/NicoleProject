@@ -2,13 +2,13 @@
 <div ng-init="getBooks()"></div>
 <p><input type="text" ng-model="test" placeholder="Search..."></p>
 <p><select ng-model="category" ng-options="x for x in categoryNames">Category</select></p>
-eBook: <input type="checkbox" ng-model="eBook">
+<p><select ng-model="eBook" ng-options="y for y in eBookStatus" placeholder="eBook">eBook</select></p>
 
-<ul ng-repeat="book in allTheBooks | filter:test | filter:category | filter: eBook">
+<ul ng-repeat="book in allTheBooks | filter:test | filter:category | filter:eBook">
   <li><strong>Title: </strong><span editable-text="book.title" e-name="name" e-form="editableForm" e-required>{{book.title}}</span></li>
     <ul>
       <li><strong>Category: </strong><span editable-text="book.category" e-name="name" e-form="editableForm" e-required>{{book.category}}</span></li>
-      <li><strong>eBook: </strong><span editable-text="book.eBook" e-name="name" e-form="editableForm" e-required>{{book.eBook?'Yes':'No'}}</span></li>
+      <li><strong>eBook: </strong><span editable-text="book.eBook" e-name="name" e-form="editableForm" e-required>{{book.eBook}}</span></li>
       <li><strong>Volume: </strong><span editable-text="book.volume" e-name="name" e-form="editableForm" e-required>{{book.volume}}</li>
       <li><strong>Author: </strong><span editable-text="book.author" e-name="name" e-form="editableForm" e-required>{{book.author}}</li>
       <li><strong>Genre: </strong><span editable-text="book.genre" e-name="name" e-form="editableForm" e-required>{{book.genre}}</li>

@@ -15,7 +15,7 @@ app.listen( process.env.PORT || 8080, function( req, res ){
 var bookSchema = mongoose.Schema({
   title: {type: String, required: true},
   category: String,
-  eBook: Boolean,
+  eBook: String,
   volume: String,
   author: String,
   genre: String,
@@ -85,11 +85,18 @@ app.put('/bookUpdate/:id', function (req, res) {
   console.log('test category' ,  req.body.book.category);
   console.log('testing ID' , req.body.book._id);
   var _id = req.body.book._id;
-  books.findOneAndUpdate(_id, {title: req.body.book.title, category: req.body.book.category, eBook: req.body.book.eBook,
-    volume: req.body.book.volume, author: req.body.book.author, genre: req.body.book.genre, stars: req.body.book.stars,
-    comments: req.body.book.comments}, function (err) {
-
-    });
+  books.findOneAndUpdate(_id,
+    {
+      title: req.body.book.title,
+      category: req.body.book.category,
+      eBook: req.body.book.eBook,
+      volume: req.body.book.volume,
+      author: req.body.book.author,
+      genre: req.body.book.genre,
+      stars: req.body.book.stars,
+      comments: req.body.book.comments},
+      function (err) {
+    });//end of books.findOneAndUpdate call
 });//end of app.update function
 //static folder
 // app.use(express.static('public'));

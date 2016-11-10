@@ -50,6 +50,7 @@ myApp.controller('addingBook', ['$scope', '$http', function ($scope, $http) {
   };//End of add Book
 
   $scope.categoryNames = ['Need to Buy', 'Need to Read', 'Already Have'];
+  $scope.eBookStatus = ['Yes', 'No'];
 }]);//End of controller
 
 myApp.controller('aboutController', ['$scope', '$http', function ($scope, $http) {
@@ -67,6 +68,7 @@ myApp.controller('sortBookController', ['$scope', '$http', function ($scope, $ht
   };//end of get books function
 
   $scope.categoryNames = ['', 'Need to Buy', 'Need to Read', 'Already Have'];
+  $scope.eBookStatus = ['', 'Yes', 'No'];
 
   $scope.eBookFilter = function () {
 
