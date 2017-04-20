@@ -1,9 +1,9 @@
-<label for="title">Title: <input type="text" name="title" ng-model="book.title" value="" placeholder="Title"></label><br>
-<label for="category">Category: <select ng-model="book.category" ng-options="x for x in categoryNames"></select></label><br>
-<label for="eBook">eBook: <select ng-model="book.eBook" ng-options="y for y in eBookStatus"></label><br>
-<label for="volume">Volume(opt): <input type="text" name="volume" ng-model="book.volume" value="" placeholder="Volume #"></label><br>
-<label for="author">Author: <input type="text" name="author" ng-model="book.author" value="" placeholder="Auther"></label><br>
-<label for="genre">Genre: <input type="text" name="genre" ng-model="book.genre" value="" placeholder="Genre"></label><br>
-<label for="stars">Stars: <input type="text" name="stars" ng-model="book.stars" value="" placeholder="Stars 1-10"></label><br>
-<label for="comments">Comments: <input type="text" name="name" ng-model="book.comments" value="" placeholder="Comments..."></label><br>
+Title: <input type="text" name="title" ng-model="book.title" value="" placeholder="Title"><br>
+Category: <select ng-model="book.category" ng-options="x for x in categoryNames"></select><br>
+eBook: <select ng-model="book.eBook" ng-options="y for y in eBookStatus"><br>
+Volume: <input type="text" name="volume" ng-model="book.volume" value="" placeholder="Volume #"><br>
+Author: <input type="text" name="author" ng-model="book.author" value="" placeholder="Auther"><br>
+Genre: <input type="text" name="genre" ng-model="book.genre" value="" placeholder="Genre"><br>
+Stars: <input type="text" name="stars" ng-model="book.stars" value="" placeholder="Stars 1-10"><br>
+Comments: <input type="text" name="name" ng-model="book.comments" value="" placeholder="Comments..."><br>
 <button type="button" name="button" ng-click="addBook()">Submit</button>
